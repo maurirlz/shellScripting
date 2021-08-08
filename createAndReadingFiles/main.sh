@@ -27,7 +27,7 @@
   find . -name '*.jpg' | wc -l # searches for glob and pipes the result into wc, given us the number of files ending with .jpg
 
 # Pipes
-  # file decryptor: 0: stdin, 1: stdout, 2: stderr
+  # file descriptor for POSIX streams: 0: stdin, 1: stdout, 2: stderr
   cat current_files 1> to_another_file.txt # concatenates all the contents of current files and sends the result to to_another_file
   ls [*].jpg 2> error.txt # generate error due to confusing glob not escaping brackets and pipes down stderr to error.txt
   # Appending content from stdout to a file
