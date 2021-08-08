@@ -34,4 +34,8 @@
   ls *(@) # show symlinks
   ls -ldh *(Lk+2) # show all files greater than 2kbs using extended globbing
 
-  # locating files
+# find
+  find ~ -name grades2020.csv # searches for grades2020.csv on home dir
+  find ~ -name 'grade*' -type d # searches for a dir (thanks to -type d) that matches the grade* glob
+  find ~ -name '*.mp4' -or -name '*.jpg' # or flag help us to match with more than one glob
+  ls ./**/*(jpg | mp4) # replace for above
