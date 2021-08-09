@@ -45,4 +45,15 @@
   echo "linus torvalds" > linux > penguins > /dev/tty # available on ZSH, otherwise must use tee. /dev/tty represents terminal
   echo "linus torvalds" | tee linux | tee torvalds
   cat < linux < programmers > combined # zsh-only, grab the contents of linux and programmers, pass it to cat, print it on the therminal and send the contents to combined
-  
+
+# cut
+# -d = sets up delimiter
+# -f gets the first column of students
+# pipe the result to sort which sort the list, then pipe to uniq to remove duplicates
+# pipe to ttr in order to transform all student names from lowercase to upper case
+# lastly redirect those student names into students.txt
+cut -d ':' -f 1 grades.txt | sort | uniq | ttr '[a-z]' '[A-Z]' > students.txt
+cat students.txt | wc -l >> studentsCount.txt  # concatenate whats inside students.txt and pipe the result into wc, which -l counts the number of lines, given us the total of students, lastly append it to students.txt
+cat studentsCount >> student.txt # append the result
+
+
