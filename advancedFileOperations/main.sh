@@ -44,3 +44,26 @@
   #  filename
   awk 'BEGIN { print "the printing has begun } /home/ { print } END {print "The printing has ended" }'
   awk '{ print $2 } ' ../files/awkGrades.txt # prints the second string of each line
+  # followup on awkTest.awk
+
+# Compressing file archives with tar and bzip2 or gzip
+  touch cat.jpeg dog.jpeg snake.jpeg # assume these are pics
+  tar cvf images.tar ./*jpeg # create the archive, c tells tar to create, v to be verbose and takes an argument (images.tar)
+  # which gives the archive a filename.
+  tar tvf images.tar # t lists the files inside the archive to output
+
+# Using Gzip with tar
+  tar cvfz images.tar.gz ./*jpeg # z signals tar to use gzip, added .gz in order to know that this archive is compressed
+  # with gzip
+# Using bzip2
+  tar cvfj images.tar.bz2 # same thing as above but with bzip2
+
+# Reading from gzip
+  tar tvfz images.tar.gz # same as creating
+
+# extracting from archive, must add x argument
+  tar xvf images.tar
+  tar xvfz images.tar.gz
+  tar xfvj images.tar.bz2
+
+# bzip2 takes longer but compresses into a smaller archive, gzip is faster but compresses less than bzip2
