@@ -55,5 +55,3 @@
 cut -d ':' -f 1 grades.txt | sort | uniq | ttr '[a-z]' '[A-Z]' > students.txt
 cat students.txt | wc -l >> studentsCount.txt  # concatenate whats inside students.txt and pipe the result into wc, which -l counts the number of lines, given us the total of students, lastly append it to students.txt
 cat studentsCount >> student.txt # append the result
-
-
